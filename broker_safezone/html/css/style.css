@@ -1,0 +1,120 @@
+:root {
+    --red: rgba(255, 92, 74, 0.80);
+    --blue: rgba(0, 217, 255, 0.80);
+    --green: rgba(0,255,27,0.80);
+    --fullwidth: 100%;
+    
+    --greenshadow: rgba(0,155,16,0.32);
+    --redshadow: rgba(255, 92, 74, 0.32);
+    --blueshadow: rgba(0, 217, 255, 0.32);
+
+    --allcolors: var(--green); /* This will apply the color for everything */
+    --boxshadows: var(--greenshadow); /* This will apply the shadow color for everything */
+
+    --font: Helvetica, sans-serif;
+
+    --textcolor: white; /* Text & Icons */
+}
+
+body {
+    overflow: hidden;
+    display: none;
+    background: transparent;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
+}
+
+.fa-solid {  /* Text & Icons */
+    color: var(--textcolor);
+}
+.box {
+    position: absolute;
+    
+    margin:0 260 auto;
+	text-align: center;
+    text-shadow:1px 1px 0px rgba(0,0,0,0.5);
+    font-family: var(--font);
+	font-size: 18px; 
+}
+.box>main>a, .box>main>a:active, .box>main>a:focus, .box>main>a:hover {
+    display: inline-block!important;
+    position: relative!important;    
+    margin-left: 60px;
+    box-shadow: 0px 4px 5px var(--boxshadows);
+    padding: 0!important;
+}
+.box main a span {
+    display: block;
+    position: relative;
+	flex-wrap: nowrap;
+    padding: 1.19vh 20vw;
+    background: var(--allcolors);
+}
+
+.box main a:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 50px solid var(--allcolors);
+    border-right: 47px solid transparent;
+    position: absolute;
+    top: 0;
+    right: -47px;
+    z-index: 1;
+}
+
+.box main a:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 50px solid var(--allcolors);
+    border-left: 47px solid transparent;
+    position: absolute;
+    top: 0;
+    left: -47px;
+    z-index: 1;
+}
+
+.box main a span:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 50px solid var(--boxshadows);
+    border-right: 47px solid transparent;
+    position: absolute;
+    top: 4px;
+    right: -47px;
+}
+
+.box main a span:before {
+    content: "";
+    width: 0;
+    height: 0;
+    border-top: 50px solid var(--boxshadows);
+    border-left: 47px solid transparent;
+    position: absolute;
+    top: 4px;
+    left: -47px;
+}
+
+@keyframes anim {
+    from {
+      opacity: 1;
+      visibility: hidden;
+      transform: translateY(-90%);
+    }
+    to { 
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+  
+  .box {
+     animation: anim 1.5s linear forwards;
+  }
