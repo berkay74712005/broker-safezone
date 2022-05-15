@@ -10,6 +10,7 @@ version '1.0.0'
 
 escrow_ignore {
     'config.lua',
+    'client.lua',
     'server.lua'
 }
 
